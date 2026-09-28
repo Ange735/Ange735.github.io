@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yipenè Ange Cenacle BADO — AI/ML Engineer</title>
+  <meta name="description" content="Portfolio de Yipenè Ange Cenacle BADO, AI/ML Engineer chez GO AI CORP et étudiant ingénieur en Data Science & IA à l'ENSAM Meknès : LLM, RAG, computer vision, data engineering." />
+  <script>
+    /* applique le thème mémorisé avant l'affichage (évite un flash) */
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; }
+    catch (e) { document.documentElement.dataset.theme = "dark"; }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+</head>
+<body>
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a href="#top" class="nav__logo">
+      <span class="nav__glyph">◆</span>
+      <span>bado<span class="dim">.model</span></span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about"><span class="idx">01</span>À propos</a>
+      <a href="#latent"><span class="idx">02</span>Espace latent</a>
+      <a href="#projects"><span class="idx">03</span>Projets</a>
+      <a href="#parcours"><span class="idx">04</span>Parcours</a>
+      <a href="#inference"><span class="idx">05</span>Contact</a>
+    </nav>
+    <div class="nav__status"><span class="pulse"></span>GO AI CORP</div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Passer au thème clair" title="Changer de thème">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <mask id="ttMoon">
+          <rect x="-12" y="-12" width="48" height="48" fill="#fff" />
+          <circle class="tt-mask" cx="18" cy="6" r="7" fill="#000" />
+        </mask>
+        <circle class="tt-core" cx="12" cy="12" r="8.5" mask="url(#ttMoon)" />
+        <g class="tt-rays">
+          <line x1="12" y1="1" x2="12" y2="3.5" /><line x1="12" y1="20.5" x2="12" y2="23" />
+          <line x1="1" y1="12" x2="3.5" y2="12" /><line x1="20.5" y1="12" x2="23" y2="12" />
+          <line x1="4.2" y1="4.2" x2="6" y2="6" /><line x1="18" y1="18" x2="19.8" y2="19.8" />
+          <line x1="4.2" y1="19.8" x2="6" y2="18" /><line x1="18" y1="6" x2="19.8" y2="4.2" />
+        </g>
+      </svg>
+    </button>
+    <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__left">
+        <p class="prompt mono">
+          <span class="prompt__sym">&gt;</span> model.generate(<span class="str">"qui es-tu ?"</span>, temperature=<span class="num">0.7</span>)
+        </p>
+
+        <h1 class="hero__title" id="genName">
+          <!-- tokens injectés par JS -->
+        </h1>
+
+        <div class="logits mono" id="logits" aria-hidden="true"></div>
+
+        <p class="hero__role">
+          <em>AI/ML Engineer</em> — je transforme des <span class="hl">données brutes</span>
+          et des <span class="hl">documents</span> en informations <span class="hl">exploitables</span>.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">
+            <span>Voir les projets</span><span class="btn__arrow">→</span>
+          </a>
+          <a href="assets/CV.pdf" class="btn btn--ghost" download>
+            <span class="mono">cv.pdf</span><span class="btn__arrow">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Assistant IA : questions cliquables, réponses écrites en direct -->
+      <aside class="hero__right">
+        <div class="chat">
+          <div class="chat__head">
+            <div class="chat__id">
+              <span class="chat__avatar mono" data-initials>··</span>
+              <div>
+                <b>Mon assistant IA</b>
+                <span class="mono">entraîné sur mon parcours</span>
+              </div>
+            </div>
+            <span class="chat__live mono"><span class="pulse"></span>en ligne</span>
+          </div>
+          <div class="chat__body" id="chatBody" aria-live="polite"></div>
+          <div class="chat__chips" id="chatChips" aria-label="Questions suggérées"></div>
+          <div class="chat__foot mono">
+            <span>↑ cliquez sur une question</span><span id="chatStats">—</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="hero__metrics">
+        <div class="metric"><span class="metric__val" data-count="20">0</span><span class="metric__unit">+</span><span class="metric__lbl mono">sources de données collectées</span></div>
+        <div class="metric"><span class="metric__val" data-count="17">0</span><span class="metric__unit"></span><span class="metric__lbl mono">dépôts publics sur GitHub</span></div>
+        <div class="metric"><span class="metric__val" data-count="1">0</span><span class="metric__unit">er</span><span class="metric__lbl mono">prix · Compétition Data IA</span></div>
+        <div class="metric"><span class="metric__val" data-count="4">0</span><span class="metric__unit"></span><span class="metric__lbl mono">certifications & distinctions</span></div>
+      </div>
+
+      <a href="#about" class="scroll-hint mono" aria-label="Défiler">
+        <span>forward()</span><span class="scroll-hint__line"></span>
+      </a>
+    </section>
+
+    <!-- ============ 01 À PROPOS (bento) ============ -->
+    <section class="section" id="about">
+      <header class="section__head">
+        <span class="section__idx mono">01</span>
+        <h2 class="section__title">À <em>propos</em></h2>
+        <p class="section__sub mono">// l'humain derrière les modèles</p>
+      </header>
+
+      <div class="bento" id="bento">
+        <article class="tile tile--bio reveal">
+          <div class="bio__top">
+            <div class="avatar" aria-hidden="true">
+              <span data-initials>··</span><i></i><i></i><i></i>
+            </div>
+            <div>
+              <p class="tile__label mono">profil</p>
+              <h3 class="bio__name" data-fullname>Yipenè Ange Cenacle BADO</h3>
+              <p class="bio__role">AI/ML Engineer · Étudiant ingénieur en Data Science &amp; IA</p>
+            </div>
+          </div>
+          <p class="bio__lead">Je transforme des données brutes et des documents en <em>décisions</em>.</p>
+          <p class="bio__text">
+            AI/ML Engineer chez GO AI CORP depuis juillet 2026, en parallèle de mon cycle ingénieur
+            à l'ENSAM Meknès. Je travaille sur la collecte de données à grande échelle, l'OCR de
+            documents scannés et l'extraction d'informations par LLM, notamment pour analyser la
+            conformité des dossiers d'appels d'offres. J'ai aussi une pratique du Machine Learning,
+            de la vision par ordinateur, du NLP et des séries temporelles, de la préparation des
+            données jusqu'à l'évaluation des modèles.
+          </p>
+          <div class="bio__open">
+            <span class="mono dim">spécialités</span>
+            <span class="tag tag--ok">LLM &amp; RAG</span><span class="tag">Computer Vision</span><span class="tag">Data Engineering</span>
+          </div>
+        </article>
+
+        <article class="tile tile--now reveal">
+          <p class="tile__label mono"><span class="pulse"></span>en ce moment</p>
+          <p class="now__text">Je développe <em>AFRIKOPPS</em> chez GO AI CORP : collecte multi-pays, OCR et moteur de conformité des appels d'offres.</p>
+          <div class="now__bar" aria-hidden="true"><i></i></div>
+          <p class="mono dim now__hint">20+ sources · 5 portails publics · extraction LLM</p>
+        </article>
+
+        <article class="tile tile--place reveal">
+          <p class="tile__label mono">basé à</p>
+          <p class="place__city">Meknès</p>
+          <p class="place__country">Maroc · ENSAM Meknès</p>
+          <p class="place__time mono"><span class="dim">heure locale</span> <b id="localTime" data-tz="Africa/Casablanca">--:--</b></p>
+        </article>
+
+        <article class="tile tile--lang reveal">
+          <p class="tile__label mono">langues</p>
+          <ul class="langs">
+            <li><span>Français</span><span class="bar"><i style="--v: 1"></i></span><span class="mono dim">langue maternelle</span></li>
+            <li><span>Anglais</span><span class="bar"><i style="--v: .55"></i></span><span class="mono dim">intermédiaire</span></li>
+          </ul>
+        </article>
+
+        <article class="tile tile--values reveal">
+          <p class="tile__label mono">ce que j'apporte</p>
+          <ol class="values">
+            <li><span class="values__n mono">01</span><div><b>De la donnée brute à l'info utile</b><p>Scraping multi-pays, OCR de documents scannés, extraction structurée par LLM.</p></div></li>
+            <li><span class="values__n mono">02</span><div><b>Des modèles évalués</b><p>Jeux de référence, MAE et RMSE, précision et rappel : des chiffres, pas des impressions.</p></div></li>
+            <li><span class="values__n mono">03</span><div><b>Du prototype au produit</b><p>FastAPI, Celery, Redis, PostgreSQL et Docker pour que le modèle tourne vraiment.</p></div></li>
+          </ol>
+        </article>
+
+        <article class="tile tile--awards reveal">
+          <p class="tile__label mono">distinctions &amp; certifications</p>
+          <ul class="awards">
+            <li>
+              <span class="awards__what"><b>1<sup>er</sup> prix</b> — Compétition Data IA</span>
+              <span class="awards__who">GO AI ACADEMY</span><span class="mono awards__year">2025</span>
+            </li>
+            <li>
+              <span class="awards__what">Machine Learning Specialization</span>
+              <span class="awards__who">Andrew Ng · Stanford / Coursera</span><span class="mono awards__year">2026</span>
+            </li>
+            <li>
+              <span class="awards__what">Mathematics for Machine Learning and Data Science</span>
+              <span class="awards__who">DeepLearning.AI / Coursera</span><span class="mono awards__year">2025</span>
+            </li>
+            <li>
+              <span class="awards__what">Data Science &amp; AI</span>
+              <span class="awards__who">GO AI ACADEMY</span><span class="mono awards__year">2025</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 02 LATENT SPACE ============ -->
+    <section class="section" id="latent">
+      <header class="section__head">
+        <span class="section__idx mono">02</span>
+        <h2 class="section__title">Espace <em>latent</em></h2>
+        <p class="section__sub mono">// compétences projetées en 2D · t-SNE(perplexity=30)</p>
+      </header>
+
+      <div class="latent reveal">
+        <div class="latent__plot" id="latentPlot">
+          <svg id="latentSvg" role="img" aria-label="Carte des compétences"></svg>
+          <div class="latent__tip mono" id="latentTip"></div>
+        </div>
+        <div class="latent__legend" id="latentLegend"></div>
+      </div>
+    </section>
+
+    <!-- ============ 03 PROJETS (liste + fiche) ============ -->
+    <section class="section" id="projects">
+      <header class="section__head">
+        <span class="section__idx mono">03</span>
+        <h2 class="section__title">Pro<em>jets</em></h2>
+        <p class="section__sub mono">// survolez un projet pour afficher sa fiche</p>
+      </header>
+
+      <div class="proj reveal">
+        <ol class="proj__list" id="projList"><!-- injecté par JS --></ol>
+        <div class="proj__panel" id="projPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ============ 04 PARCOURS (frise) ============ -->
+    <section class="section" id="parcours">
+      <header class="section__head">
+        <span class="section__idx mono">04</span>
+        <h2 class="section__title">Par<em>cours</em></h2>
+        <p class="section__sub mono">// expérience, formation et engagement associatif</p>
+      </header>
+
+      <div class="path-filter mono" id="pathFilter" role="group" aria-label="Filtrer le parcours">
+        <button type="button" class="is-active" data-f="all">Tout</button>
+        <button type="button" data-f="work">💼 Expérience</button>
+        <button type="button" data-f="edu">🎓 Formation</button>
+        <button type="button" data-f="assoc">🤝 Associatif</button>
+      </div>
+
+      <div class="path" id="path">
+        <div class="path__rail" aria-hidden="true"><i id="pathFill"></i></div>
+        <ol class="path__list" id="pathList"><!-- injecté par JS --></ol>
+      </div>
+    </section>
+
+    <!-- ============ 05 INFERENCE / CONTACT ============ -->
+    <section class="section" id="inference">
+      <header class="section__head">
+        <span class="section__idx mono">05</span>
+        <h2 class="section__title">Lancer une <em>inférence</em></h2>
+        <p class="section__sub mono">// un projet, une idée, une question ? envoyez un prompt.</p>
+      </header>
+
+      <div class="contact">
+        <form class="term reveal" id="termForm" autocomplete="off">
+          <div class="term__bar mono">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span>~/contact — zsh</span>
+            <span></span>
+          </div>
+          <div class="term__body mono">
+            <p class="dim"># Remplissez les champs puis appuyez sur Entrée</p>
+            <label class="term__line">
+              <span class="term__ps">nom ›</span>
+              <input name="name" required placeholder="Ada Lovelace" />
+            </label>
+            <label class="term__line">
+              <span class="term__ps">email ›</span>
+              <input name="email" type="email" required placeholder="ada@exemple.com" />
+            </label>
+            <label class="term__line term__line--area">
+              <span class="term__ps">prompt ›</span>
+              <textarea name="message" rows="3" required placeholder="Bonjour, j'aimerais discuter d'un projet de…"></textarea>
+            </label>
+            <button type="submit" class="term__run">
+              <span>$ run --send</span><kbd>↵</kbd>
+            </button>
+            <div class="term__out" id="termOut" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <div class="links reveal">
+          <a href="mailto:baocenacle80@gmail.com" class="link">
+            <span class="link__k mono">email</span><span class="link__v">baocenacle80@gmail.com</span><span class="link__a">↗</span>
+          </a>
+          <a href="https://github.com/Ange735" target="_blank" rel="noopener" class="link">
+            <span class="link__k mono">github</span><span class="link__v">@Ange735</span><span class="link__a">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/ange-bado" target="_blank" rel="noopener" class="link">
+            <span class="link__k mono">linkedin</span><span class="link__v">/in/ange-bado</span><span class="link__a">↗</span>
+          </a>
+          <a href="assets/CV.pdf" download class="link">
+            <span class="link__k mono">cv</span><span class="link__v">CV — AI/ML Engineer</span><span class="link__a">↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <span>© <span id="year"></span> <span data-fullname>Yipenè Ange Cenacle BADO</span></span>
+    <span class="dim">conçu à la main · aucun modèle n'a été maltraité</span>
+    <a href="#top">↑ retour au prompt</a>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/sections.js"></script>
+</body>
+</html>
