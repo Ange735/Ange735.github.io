@@ -1,0 +1,977 @@
+{
+ "generated_at": "2026-09-28T10:12:53+00:00",
+ "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+ "method": "t-SNE (scikit-learn)",
+ "params": {
+  "perplexity": 8.0,
+  "metric": "cosine",
+  "init": "pca",
+  "seed": 42,
+  "dimensions": 384
+ },
+ "counts": {
+  "points": 35,
+  "projects": 7,
+  "skills": 28,
+  "edges": 51
+ },
+ "points": [
+  {
+   "id": "project-afrikopps-intelligence-des-appels-d-offres",
+   "kind": "project",
+   "index": 0,
+   "label": "AFRIKOPPS — intelligence des appels d'offres",
+   "domain": "LLM · Data",
+   "text": "AFRIKOPPS — intelligence des appels d'offres Plateforme multi-pays qui collecte et analyse les appels d'offres, offres d'emploi et stages en Afrique, chez GO AI CORP. Les opportunités publiques sont éparpillées sur des dizaines de portails, souvent en PDF scannés, et les dossiers d'appel d'offres sont longs à décortiquer. Plus de 20 sources de scraping (ARCOP, ARMP, DGCMEF, UEMOA, BCEAO), repli OCR Tesseract sur les avis scannés, puis un Requirement Extractor qui sort les critères d'un DAO en JSON structuré pour le Gap Matching. Données dédoublonnées (double empreinte SHA-256), normalisées par pays et secteur, servies par une architecture multi-tenant avec files Celery et bus Redis Streams. Python, FastAPI, Celery, Redis, PostgreSQL, Tesseract, LLM, Docker",
+   "x": 84.13,
+   "y": 60.21,
+   "near": [
+    {
+     "id": "project-detection-de-fraude-mobile-money",
+     "similarity": 0.5232
+    },
+    {
+     "id": "skill-python",
+     "similarity": 0.5193
+    }
+   ]
+  },
+  {
+   "id": "project-sehha-moteur-ia-de-triage-medical",
+   "kind": "project",
+   "index": 1,
+   "label": "SEHHA — moteur IA de triage médical",
+   "domain": "LLM · Santé",
+   "text": "SEHHA — moteur IA de triage médical Le moteur IA d'une plateforme hospitalière, développé pour le Youth Nexus Cyber AI Challenge. Aux urgences, l'orientation d'un patient dépend d'un entretien clinique long, alors que les signes d'alarme doivent être repérés immédiatement. Un agent conversationnel LLM mène un entretien adaptatif, extrait les réponses en JSON et raisonne en plusieurs étapes sur un RAG de protocoles médicaux (ChromaDB, Sentence-Transformers). Triage sur l'échelle CCMU (1 à 5), court-circuit immédiat sur les signes d'alarme, score de confiance avec validation humaine, et bascule automatique entre LLM cloud (Groq) et local (Ollama). Python, LLM, RAG, ChromaDB, Sentence-Transformers, Ollama",
+   "x": 90.18,
+   "y": 44.54,
+   "near": [
+    {
+     "id": "project-prediction-des-passages-aux-urgences",
+     "similarity": 0.5125
+    },
+    {
+     "id": "project-afrikopps-intelligence-des-appels-d-offres",
+     "similarity": 0.4425
+    }
+   ]
+  },
+  {
+   "id": "project-smart-blind-assistant",
+   "kind": "project",
+   "index": 2,
+   "label": "Smart Blind Assistant",
+   "domain": "Vision · Mobile",
+   "text": "Smart Blind Assistant Application mobile d'assistance aux personnes malvoyantes : retrouver ses affaires, se repérer chez soi, éviter les obstacles. Se déplacer et retrouver un objet chez soi reste difficile sans aide extérieure quand on est malvoyant. Application Flutter reliée à un backend FastAPI : détection et classification d'objets en temps réel sur le flux de la caméra, description vocale de la scène, module NLP et intégration STT/TTS. Une interaction entièrement mains libres, aujourd'hui poussée vers une solution commercialisable. Flutter, FastAPI, OpenCV, NLP, STT / TTS",
+   "x": 39.92,
+   "y": 58.45,
+   "near": [
+    {
+     "id": "skill-fastapi",
+     "similarity": 0.4374
+    },
+    {
+     "id": "skill-mediapipe",
+     "similarity": 0.4187
+    }
+   ]
+  },
+  {
+   "id": "project-prediction-des-passages-aux-urgences",
+   "kind": "project",
+   "index": 3,
+   "label": "Prédiction des passages aux urgences",
+   "domain": "Séries temporelles",
+   "text": "Prédiction des passages aux urgences Prévision du flux quotidien de patients à l'hôpital Mohammed V de Meknès, pour mieux dimensionner les équipes. Sans visibilité sur l'affluence à venir, les plannings des urgences sont subis plutôt que préparés. Nettoyage de données hospitalières réelles, traitement des valeurs manquantes et feature engineering temporel : saisonnalité, jours fériés, tendances. Comparaison d'ARIMA, Prophet et LSTM sur les mêmes données, évaluée en MAE et RMSE. Python, ARIMA, Prophet, LSTM, Pandas",
+   "x": 94.0,
+   "y": 49.35,
+   "near": [
+    {
+     "id": "project-sehha-moteur-ia-de-triage-medical",
+     "similarity": 0.5125
+    },
+    {
+     "id": "project-afrikopps-intelligence-des-appels-d-offres",
+     "similarity": 0.4501
+    }
+   ]
+  },
+  {
+   "id": "project-visual-rag-tourisme-au-maroc",
+   "kind": "project",
+   "index": 4,
+   "label": "Visual RAG — tourisme au Maroc",
+   "domain": "Vision · RAG",
+   "text": "Visual RAG — tourisme au Maroc Reconnaître un monument marocain à partir d'une photo, puis générer sa fiche touristique. Une photo de monument ne dit rien au voyageur qui ne sait pas ce qu'il regarde. Encodage des images avec CLIP, recherche du monument le plus proche dans un index vectoriel ChromaDB, puis rédaction de la fiche par un LLM local via Ollama. Un RAG visuel complet qui tourne en local, de la photo à la fiche touristique. CLIP, ChromaDB, Ollama, Python",
+   "x": 6.0,
+   "y": 62.65,
+   "near": [
+    {
+     "id": "skill-clip",
+     "similarity": 0.4474
+    },
+    {
+     "id": "skill-mediapipe",
+     "similarity": 0.3787
+    }
+   ]
+  },
+  {
+   "id": "project-detection-de-fraude-mobile-money",
+   "kind": "project",
+   "index": 5,
+   "label": "Détection de fraude Mobile Money",
+   "domain": "ML non supervisé",
+   "text": "Détection de fraude Mobile Money Repérer des transactions frauduleuses rares dans un jeu de données non étiqueté, par clustering. Sans étiquettes, impossible d'entraîner un classifieur : les fraudes représentent moins de 2 % des transactions. Feature engineering (ratio montant/solde, encodage cyclique de l'heure, transformations log, standardisation), choix de k par silhouette, coude et stabilité des clusters. Un score d'anomalie normalisé par cluster et des règles d'alerte explicables, évaluées en précision et rappel. scikit-learn, K-means, Pandas, Seaborn",
+   "x": 90.98,
+   "y": 62.05,
+   "near": [
+    {
+     "id": "project-afrikopps-intelligence-des-appels-d-offres",
+     "similarity": 0.5232
+    },
+    {
+     "id": "skill-web-scraping",
+     "similarity": 0.5007
+    }
+   ]
+  },
+  {
+   "id": "project-ensam-market",
+   "kind": "project",
+   "index": 6,
+   "label": "ENSAM Market",
+   "domain": "Web · PHP",
+   "text": "ENSAM Market Marketplace d'achat et de vente entre étudiants de l'ENSAM Meknès. Les ventes entre étudiants se faisaient de groupe en groupe, sans historique ni recherche possible. Application PHP / MySQL complète : comptes, annonces, recherche, messagerie et back-office. Une place de marché interne à l'école, développée de la base de données à l'interface. PHP, MySQL, HTML/CSS, JavaScript",
+   "x": 91.14,
+   "y": 81.22,
+   "near": [
+    {
+     "id": "skill-sql",
+     "similarity": 0.3964
+    },
+    {
+     "id": "skill-java-c-php",
+     "similarity": 0.3782
+    }
+   ]
+  },
+  {
+   "id": "skill-transformers",
+   "kind": "skill",
+   "label": "Transformers",
+   "domain": "NLP & LLM",
+   "level": 5,
+   "text": "Transformers. NLP & LLM.",
+   "x": 76.63,
+   "y": 16.54,
+   "near": [
+    {
+     "id": "skill-sentence-transformers",
+     "similarity": 0.6893
+    },
+    {
+     "id": "skill-rag",
+     "similarity": 0.5569
+    }
+   ]
+  },
+  {
+   "id": "skill-rag",
+   "kind": "skill",
+   "label": "RAG",
+   "domain": "NLP & LLM",
+   "level": 5,
+   "text": "RAG. NLP & LLM.",
+   "x": 65.34,
+   "y": 29.62,
+   "near": [
+    {
+     "id": "skill-spacy-nltk",
+     "similarity": 0.8138
+    },
+    {
+     "id": "skill-langchain",
+     "similarity": 0.7948
+    }
+   ]
+  },
+  {
+   "id": "skill-langchain",
+   "kind": "skill",
+   "label": "LangChain",
+   "domain": "NLP & LLM",
+   "level": 4,
+   "text": "LangChain. NLP & LLM.",
+   "x": 67.52,
+   "y": 22.36,
+   "near": [
+    {
+     "id": "skill-rag",
+     "similarity": 0.7948
+    },
+    {
+     "id": "skill-spacy-nltk",
+     "similarity": 0.7594
+    }
+   ]
+  },
+  {
+   "id": "skill-chromadb-faiss",
+   "kind": "skill",
+   "label": "ChromaDB / FAISS",
+   "domain": "NLP & LLM",
+   "level": 4,
+   "text": "ChromaDB / FAISS. NLP & LLM.",
+   "x": 59.47,
+   "y": 25.52,
+   "near": [
+    {
+     "id": "skill-rag",
+     "similarity": 0.7193
+    },
+    {
+     "id": "skill-spacy-nltk",
+     "similarity": 0.677
+    }
+   ]
+  },
+  {
+   "id": "skill-sentence-transformers",
+   "kind": "skill",
+   "label": "Sentence-Transformers",
+   "domain": "NLP & LLM",
+   "level": 4,
+   "text": "Sentence-Transformers. NLP & LLM.",
+   "x": 74.24,
+   "y": 10.81,
+   "near": [
+    {
+     "id": "skill-transformers",
+     "similarity": 0.6893
+    },
+    {
+     "id": "skill-rag",
+     "similarity": 0.5005
+    }
+   ]
+  },
+  {
+   "id": "skill-spacy-nltk",
+   "kind": "skill",
+   "label": "spaCy / NLTK",
+   "domain": "NLP & LLM",
+   "level": 3,
+   "text": "spaCy / NLTK. NLP & LLM.",
+   "x": 71.77,
+   "y": 28.51,
+   "near": [
+    {
+     "id": "skill-rag",
+     "similarity": 0.8138
+    },
+    {
+     "id": "skill-langchain",
+     "similarity": 0.7594
+    }
+   ]
+  },
+  {
+   "id": "skill-scikit-learn",
+   "kind": "skill",
+   "label": "scikit-learn",
+   "domain": "Machine Learning",
+   "level": 5,
+   "text": "scikit-learn. Machine Learning.",
+   "x": 14.06,
+   "y": 10.9,
+   "near": [
+    {
+     "id": "skill-optuna",
+     "similarity": 0.8038
+    },
+    {
+     "id": "skill-series-temporelles",
+     "similarity": 0.7485
+    }
+   ]
+  },
+  {
+   "id": "skill-tensorflow",
+   "kind": "skill",
+   "label": "TensorFlow",
+   "domain": "Machine Learning",
+   "level": 4,
+   "text": "TensorFlow. Machine Learning.",
+   "x": 20.15,
+   "y": 6.0,
+   "near": [
+    {
+     "id": "skill-optuna",
+     "similarity": 0.7482
+    },
+    {
+     "id": "skill-scikit-learn",
+     "similarity": 0.6958
+    }
+   ]
+  },
+  {
+   "id": "skill-huggingface",
+   "kind": "skill",
+   "label": "HuggingFace",
+   "domain": "Machine Learning",
+   "level": 4,
+   "text": "HuggingFace. Machine Learning.",
+   "x": 14.8,
+   "y": 21.24,
+   "near": [
+    {
+     "id": "skill-optuna",
+     "similarity": 0.605
+    },
+    {
+     "id": "skill-scikit-learn",
+     "similarity": 0.5598
+    }
+   ]
+  },
+  {
+   "id": "skill-series-temporelles",
+   "kind": "skill",
+   "label": "Séries temporelles",
+   "domain": "Machine Learning",
+   "level": 4,
+   "text": "Séries temporelles. Machine Learning.",
+   "x": 25.47,
+   "y": 12.57,
+   "near": [
+    {
+     "id": "skill-optuna",
+     "similarity": 0.8589
+    },
+    {
+     "id": "skill-scikit-learn",
+     "similarity": 0.7485
+    }
+   ]
+  },
+  {
+   "id": "skill-optuna",
+   "kind": "skill",
+   "label": "Optuna",
+   "domain": "Machine Learning",
+   "level": 3,
+   "text": "Optuna. Machine Learning.",
+   "x": 19.61,
+   "y": 14.85,
+   "near": [
+    {
+     "id": "skill-series-temporelles",
+     "similarity": 0.8589
+    },
+    {
+     "id": "skill-scikit-learn",
+     "similarity": 0.8038
+    }
+   ]
+  },
+  {
+   "id": "skill-opencv",
+   "kind": "skill",
+   "label": "OpenCV",
+   "domain": "Computer Vision",
+   "level": 4,
+   "text": "OpenCV. Computer Vision.",
+   "x": 19.56,
+   "y": 57.45,
+   "near": [
+    {
+     "id": "skill-cnn",
+     "similarity": 0.7329
+    },
+    {
+     "id": "skill-clip",
+     "similarity": 0.7031
+    }
+   ]
+  },
+  {
+   "id": "skill-yolo",
+   "kind": "skill",
+   "label": "YOLO",
+   "domain": "Computer Vision",
+   "level": 4,
+   "text": "YOLO. Computer Vision.",
+   "x": 24.85,
+   "y": 71.54,
+   "near": [
+    {
+     "id": "skill-clip",
+     "similarity": 0.7187
+    },
+    {
+     "id": "skill-cnn",
+     "similarity": 0.6956
+    }
+   ]
+  },
+  {
+   "id": "skill-cnn",
+   "kind": "skill",
+   "label": "CNN",
+   "domain": "Computer Vision",
+   "level": 4,
+   "text": "CNN. Computer Vision.",
+   "x": 17.59,
+   "y": 69.97,
+   "near": [
+    {
+     "id": "skill-mediapipe",
+     "similarity": 0.7606
+    },
+    {
+     "id": "skill-opencv",
+     "similarity": 0.7329
+    }
+   ]
+  },
+  {
+   "id": "skill-mediapipe",
+   "kind": "skill",
+   "label": "MediaPipe",
+   "domain": "Computer Vision",
+   "level": 3,
+   "text": "MediaPipe. Computer Vision.",
+   "x": 23.11,
+   "y": 64.01,
+   "near": [
+    {
+     "id": "skill-clip",
+     "similarity": 0.7739
+    },
+    {
+     "id": "skill-cnn",
+     "similarity": 0.7606
+    }
+   ]
+  },
+  {
+   "id": "skill-clip",
+   "kind": "skill",
+   "label": "CLIP",
+   "domain": "Computer Vision",
+   "level": 3,
+   "text": "CLIP. Computer Vision.",
+   "x": 14.73,
+   "y": 63.43,
+   "near": [
+    {
+     "id": "skill-mediapipe",
+     "similarity": 0.7739
+    },
+    {
+     "id": "skill-cnn",
+     "similarity": 0.7267
+    }
+   ]
+  },
+  {
+   "id": "skill-fastapi",
+   "kind": "skill",
+   "label": "FastAPI",
+   "domain": "Backend & MLOps",
+   "level": 5,
+   "text": "FastAPI. Backend & MLOps.",
+   "x": 54.49,
+   "y": 53.64,
+   "near": [
+    {
+     "id": "skill-docker",
+     "similarity": 0.6549
+    },
+    {
+     "id": "skill-postgresql",
+     "similarity": 0.5646
+    }
+   ]
+  },
+  {
+   "id": "skill-celery-redis",
+   "kind": "skill",
+   "label": "Celery / Redis",
+   "domain": "Backend & MLOps",
+   "level": 4,
+   "text": "Celery / Redis. Backend & MLOps.",
+   "x": 52.47,
+   "y": 39.8,
+   "near": [
+    {
+     "id": "skill-docker",
+     "similarity": 0.5835
+    },
+    {
+     "id": "skill-fastapi",
+     "similarity": 0.4811
+    }
+   ]
+  },
+  {
+   "id": "skill-postgresql",
+   "kind": "skill",
+   "label": "PostgreSQL",
+   "domain": "Backend & MLOps",
+   "level": 4,
+   "text": "PostgreSQL. Backend & MLOps.",
+   "x": 61.04,
+   "y": 64.93,
+   "near": [
+    {
+     "id": "skill-sqlalchemy",
+     "similarity": 0.7688
+    },
+    {
+     "id": "skill-fastapi",
+     "similarity": 0.5646
+    }
+   ]
+  },
+  {
+   "id": "skill-docker",
+   "kind": "skill",
+   "label": "Docker",
+   "domain": "Backend & MLOps",
+   "level": 4,
+   "text": "Docker. Backend & MLOps.",
+   "x": 55.04,
+   "y": 46.71,
+   "near": [
+    {
+     "id": "skill-fastapi",
+     "similarity": 0.6549
+    },
+    {
+     "id": "skill-rag",
+     "similarity": 0.5864
+    }
+   ]
+  },
+  {
+   "id": "skill-sqlalchemy",
+   "kind": "skill",
+   "label": "SQLAlchemy",
+   "domain": "Backend & MLOps",
+   "level": 3,
+   "text": "SQLAlchemy. Backend & MLOps.",
+   "x": 65.43,
+   "y": 69.48,
+   "near": [
+    {
+     "id": "skill-postgresql",
+     "similarity": 0.7688
+    },
+    {
+     "id": "skill-sql",
+     "similarity": 0.723
+    }
+   ]
+  },
+  {
+   "id": "skill-git-github",
+   "kind": "skill",
+   "label": "Git / GitHub",
+   "domain": "Backend & MLOps",
+   "level": 4,
+   "text": "Git / GitHub. Backend & MLOps.",
+   "x": 62.4,
+   "y": 52.65,
+   "near": [
+    {
+     "id": "skill-fastapi",
+     "similarity": 0.5588
+    },
+    {
+     "id": "skill-docker",
+     "similarity": 0.4852
+    }
+   ]
+  },
+  {
+   "id": "skill-python",
+   "kind": "skill",
+   "label": "Python",
+   "domain": "Data & Langages",
+   "level": 5,
+   "text": "Python. Data & Langages.",
+   "x": 74.92,
+   "y": 85.57,
+   "near": [
+    {
+     "id": "skill-sql",
+     "similarity": 0.6663
+    },
+    {
+     "id": "skill-java-c-php",
+     "similarity": 0.6266
+    }
+   ]
+  },
+  {
+   "id": "skill-pandas-numpy",
+   "kind": "skill",
+   "label": "Pandas / NumPy",
+   "domain": "Data & Langages",
+   "level": 5,
+   "text": "Pandas / NumPy. Data & Langages.",
+   "x": 74.86,
+   "y": 94.0,
+   "near": [
+    {
+     "id": "skill-python",
+     "similarity": 0.4948
+    },
+    {
+     "id": "skill-ocr-tesseract",
+     "similarity": 0.4307
+    }
+   ]
+  },
+  {
+   "id": "skill-sql",
+   "kind": "skill",
+   "label": "SQL",
+   "domain": "Data & Langages",
+   "level": 4,
+   "text": "SQL. Data & Langages.",
+   "x": 72.45,
+   "y": 76.86,
+   "near": [
+    {
+     "id": "skill-sqlalchemy",
+     "similarity": 0.723
+    },
+    {
+     "id": "skill-java-c-php",
+     "similarity": 0.6814
+    }
+   ]
+  },
+  {
+   "id": "skill-web-scraping",
+   "kind": "skill",
+   "label": "Web scraping",
+   "domain": "Data & Langages",
+   "level": 4,
+   "text": "Web scraping. Data & Langages.",
+   "x": 88.48,
+   "y": 69.36,
+   "near": [
+    {
+     "id": "project-detection-de-fraude-mobile-money",
+     "similarity": 0.5007
+    },
+    {
+     "id": "project-afrikopps-intelligence-des-appels-d-offres",
+     "similarity": 0.467
+    }
+   ]
+  },
+  {
+   "id": "skill-ocr-tesseract",
+   "kind": "skill",
+   "label": "OCR (Tesseract)",
+   "domain": "Data & Langages",
+   "level": 4,
+   "text": "OCR (Tesseract). Data & Langages.",
+   "x": 67.24,
+   "y": 83.64,
+   "near": [
+    {
+     "id": "skill-sql",
+     "similarity": 0.6135
+    },
+    {
+     "id": "skill-python",
+     "similarity": 0.6007
+    }
+   ]
+  },
+  {
+   "id": "skill-java-c-php",
+   "kind": "skill",
+   "label": "Java / C / PHP",
+   "domain": "Data & Langages",
+   "level": 3,
+   "text": "Java / C / PHP. Data & Langages.",
+   "x": 79.57,
+   "y": 79.23,
+   "near": [
+    {
+     "id": "skill-sql",
+     "similarity": 0.6814
+    },
+    {
+     "id": "skill-python",
+     "similarity": 0.6266
+    }
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "a": "project-afrikopps-intelligence-des-appels-d-offres",
+   "b": "project-detection-de-fraude-mobile-money",
+   "similarity": 0.5232
+  },
+  {
+   "a": "project-afrikopps-intelligence-des-appels-d-offres",
+   "b": "skill-python",
+   "similarity": 0.5193
+  },
+  {
+   "a": "project-sehha-moteur-ia-de-triage-medical",
+   "b": "project-prediction-des-passages-aux-urgences",
+   "similarity": 0.5125
+  },
+  {
+   "a": "project-afrikopps-intelligence-des-appels-d-offres",
+   "b": "project-sehha-moteur-ia-de-triage-medical",
+   "similarity": 0.4425
+  },
+  {
+   "a": "project-smart-blind-assistant",
+   "b": "skill-fastapi",
+   "similarity": 0.4374
+  },
+  {
+   "a": "project-smart-blind-assistant",
+   "b": "skill-mediapipe",
+   "similarity": 0.4187
+  },
+  {
+   "a": "project-afrikopps-intelligence-des-appels-d-offres",
+   "b": "project-prediction-des-passages-aux-urgences",
+   "similarity": 0.4501
+  },
+  {
+   "a": "project-visual-rag-tourisme-au-maroc",
+   "b": "skill-clip",
+   "similarity": 0.4474
+  },
+  {
+   "a": "project-visual-rag-tourisme-au-maroc",
+   "b": "skill-mediapipe",
+   "similarity": 0.3787
+  },
+  {
+   "a": "project-detection-de-fraude-mobile-money",
+   "b": "skill-web-scraping",
+   "similarity": 0.5007
+  },
+  {
+   "a": "project-ensam-market",
+   "b": "skill-sql",
+   "similarity": 0.3964
+  },
+  {
+   "a": "project-ensam-market",
+   "b": "skill-java-c-php",
+   "similarity": 0.3782
+  },
+  {
+   "a": "skill-transformers",
+   "b": "skill-sentence-transformers",
+   "similarity": 0.6893
+  },
+  {
+   "a": "skill-transformers",
+   "b": "skill-rag",
+   "similarity": 0.5569
+  },
+  {
+   "a": "skill-rag",
+   "b": "skill-spacy-nltk",
+   "similarity": 0.8138
+  },
+  {
+   "a": "skill-rag",
+   "b": "skill-langchain",
+   "similarity": 0.7948
+  },
+  {
+   "a": "skill-langchain",
+   "b": "skill-spacy-nltk",
+   "similarity": 0.7594
+  },
+  {
+   "a": "skill-rag",
+   "b": "skill-chromadb-faiss",
+   "similarity": 0.7193
+  },
+  {
+   "a": "skill-chromadb-faiss",
+   "b": "skill-spacy-nltk",
+   "similarity": 0.677
+  },
+  {
+   "a": "skill-rag",
+   "b": "skill-sentence-transformers",
+   "similarity": 0.5005
+  },
+  {
+   "a": "skill-scikit-learn",
+   "b": "skill-optuna",
+   "similarity": 0.8038
+  },
+  {
+   "a": "skill-scikit-learn",
+   "b": "skill-series-temporelles",
+   "similarity": 0.7485
+  },
+  {
+   "a": "skill-tensorflow",
+   "b": "skill-optuna",
+   "similarity": 0.7482
+  },
+  {
+   "a": "skill-scikit-learn",
+   "b": "skill-tensorflow",
+   "similarity": 0.6958
+  },
+  {
+   "a": "skill-huggingface",
+   "b": "skill-optuna",
+   "similarity": 0.605
+  },
+  {
+   "a": "skill-scikit-learn",
+   "b": "skill-huggingface",
+   "similarity": 0.5598
+  },
+  {
+   "a": "skill-series-temporelles",
+   "b": "skill-optuna",
+   "similarity": 0.8589
+  },
+  {
+   "a": "skill-opencv",
+   "b": "skill-cnn",
+   "similarity": 0.7329
+  },
+  {
+   "a": "skill-opencv",
+   "b": "skill-clip",
+   "similarity": 0.7031
+  },
+  {
+   "a": "skill-yolo",
+   "b": "skill-clip",
+   "similarity": 0.7187
+  },
+  {
+   "a": "skill-yolo",
+   "b": "skill-cnn",
+   "similarity": 0.6956
+  },
+  {
+   "a": "skill-cnn",
+   "b": "skill-mediapipe",
+   "similarity": 0.7606
+  },
+  {
+   "a": "skill-mediapipe",
+   "b": "skill-clip",
+   "similarity": 0.7739
+  },
+  {
+   "a": "skill-cnn",
+   "b": "skill-clip",
+   "similarity": 0.7267
+  },
+  {
+   "a": "skill-fastapi",
+   "b": "skill-docker",
+   "similarity": 0.6549
+  },
+  {
+   "a": "skill-fastapi",
+   "b": "skill-postgresql",
+   "similarity": 0.5646
+  },
+  {
+   "a": "skill-celery-redis",
+   "b": "skill-docker",
+   "similarity": 0.5835
+  },
+  {
+   "a": "skill-fastapi",
+   "b": "skill-celery-redis",
+   "similarity": 0.4811
+  },
+  {
+   "a": "skill-postgresql",
+   "b": "skill-sqlalchemy",
+   "similarity": 0.7688
+  },
+  {
+   "a": "skill-rag",
+   "b": "skill-docker",
+   "similarity": 0.5864
+  },
+  {
+   "a": "skill-sqlalchemy",
+   "b": "skill-sql",
+   "similarity": 0.723
+  },
+  {
+   "a": "skill-fastapi",
+   "b": "skill-git-github",
+   "similarity": 0.5588
+  },
+  {
+   "a": "skill-docker",
+   "b": "skill-git-github",
+   "similarity": 0.4852
+  },
+  {
+   "a": "skill-python",
+   "b": "skill-sql",
+   "similarity": 0.6663
+  },
+  {
+   "a": "skill-python",
+   "b": "skill-java-c-php",
+   "similarity": 0.6266
+  },
+  {
+   "a": "skill-python",
+   "b": "skill-pandas-numpy",
+   "similarity": 0.4948
+  },
+  {
+   "a": "skill-pandas-numpy",
+   "b": "skill-ocr-tesseract",
+   "similarity": 0.4307
+  },
+  {
+   "a": "skill-sql",
+   "b": "skill-java-c-php",
+   "similarity": 0.6814
+  },
+  {
+   "a": "project-afrikopps-intelligence-des-appels-d-offres",
+   "b": "skill-web-scraping",
+   "similarity": 0.467
+  },
+  {
+   "a": "skill-sql",
+   "b": "skill-ocr-tesseract",
+   "similarity": 0.6135
+  },
+  {
+   "a": "skill-python",
+   "b": "skill-ocr-tesseract",
+   "similarity": 0.6007
+  }
+ ]
+}

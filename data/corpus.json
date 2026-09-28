@@ -1,0 +1,282 @@
+[
+  {
+    "id": "project-afrikopps-intelligence-des-appels-d-offres",
+    "kind": "project",
+    "index": 0,
+    "label": "AFRIKOPPS — intelligence des appels d'offres",
+    "domain": "LLM · Data",
+    "text": "AFRIKOPPS — intelligence des appels d'offres Plateforme multi-pays qui collecte et analyse les appels d'offres, offres d'emploi et stages en Afrique, chez GO AI CORP. Les opportunités publiques sont éparpillées sur des dizaines de portails, souvent en PDF scannés, et les dossiers d'appel d'offres sont longs à décortiquer. Plus de 20 sources de scraping (ARCOP, ARMP, DGCMEF, UEMOA, BCEAO), repli OCR Tesseract sur les avis scannés, puis un Requirement Extractor qui sort les critères d'un DAO en JSON structuré pour le Gap Matching. Données dédoublonnées (double empreinte SHA-256), normalisées par pays et secteur, servies par une architecture multi-tenant avec files Celery et bus Redis Streams. Python, FastAPI, Celery, Redis, PostgreSQL, Tesseract, LLM, Docker"
+  },
+  {
+    "id": "project-sehha-moteur-ia-de-triage-medical",
+    "kind": "project",
+    "index": 1,
+    "label": "SEHHA — moteur IA de triage médical",
+    "domain": "LLM · Santé",
+    "text": "SEHHA — moteur IA de triage médical Le moteur IA d'une plateforme hospitalière, développé pour le Youth Nexus Cyber AI Challenge. Aux urgences, l'orientation d'un patient dépend d'un entretien clinique long, alors que les signes d'alarme doivent être repérés immédiatement. Un agent conversationnel LLM mène un entretien adaptatif, extrait les réponses en JSON et raisonne en plusieurs étapes sur un RAG de protocoles médicaux (ChromaDB, Sentence-Transformers). Triage sur l'échelle CCMU (1 à 5), court-circuit immédiat sur les signes d'alarme, score de confiance avec validation humaine, et bascule automatique entre LLM cloud (Groq) et local (Ollama). Python, LLM, RAG, ChromaDB, Sentence-Transformers, Ollama"
+  },
+  {
+    "id": "project-smart-blind-assistant",
+    "kind": "project",
+    "index": 2,
+    "label": "Smart Blind Assistant",
+    "domain": "Vision · Mobile",
+    "text": "Smart Blind Assistant Application mobile d'assistance aux personnes malvoyantes : retrouver ses affaires, se repérer chez soi, éviter les obstacles. Se déplacer et retrouver un objet chez soi reste difficile sans aide extérieure quand on est malvoyant. Application Flutter reliée à un backend FastAPI : détection et classification d'objets en temps réel sur le flux de la caméra, description vocale de la scène, module NLP et intégration STT/TTS. Une interaction entièrement mains libres, aujourd'hui poussée vers une solution commercialisable. Flutter, FastAPI, OpenCV, NLP, STT / TTS"
+  },
+  {
+    "id": "project-prediction-des-passages-aux-urgences",
+    "kind": "project",
+    "index": 3,
+    "label": "Prédiction des passages aux urgences",
+    "domain": "Séries temporelles",
+    "text": "Prédiction des passages aux urgences Prévision du flux quotidien de patients à l'hôpital Mohammed V de Meknès, pour mieux dimensionner les équipes. Sans visibilité sur l'affluence à venir, les plannings des urgences sont subis plutôt que préparés. Nettoyage de données hospitalières réelles, traitement des valeurs manquantes et feature engineering temporel : saisonnalité, jours fériés, tendances. Comparaison d'ARIMA, Prophet et LSTM sur les mêmes données, évaluée en MAE et RMSE. Python, ARIMA, Prophet, LSTM, Pandas"
+  },
+  {
+    "id": "project-visual-rag-tourisme-au-maroc",
+    "kind": "project",
+    "index": 4,
+    "label": "Visual RAG — tourisme au Maroc",
+    "domain": "Vision · RAG",
+    "text": "Visual RAG — tourisme au Maroc Reconnaître un monument marocain à partir d'une photo, puis générer sa fiche touristique. Une photo de monument ne dit rien au voyageur qui ne sait pas ce qu'il regarde. Encodage des images avec CLIP, recherche du monument le plus proche dans un index vectoriel ChromaDB, puis rédaction de la fiche par un LLM local via Ollama. Un RAG visuel complet qui tourne en local, de la photo à la fiche touristique. CLIP, ChromaDB, Ollama, Python"
+  },
+  {
+    "id": "project-detection-de-fraude-mobile-money",
+    "kind": "project",
+    "index": 5,
+    "label": "Détection de fraude Mobile Money",
+    "domain": "ML non supervisé",
+    "text": "Détection de fraude Mobile Money Repérer des transactions frauduleuses rares dans un jeu de données non étiqueté, par clustering. Sans étiquettes, impossible d'entraîner un classifieur : les fraudes représentent moins de 2 % des transactions. Feature engineering (ratio montant/solde, encodage cyclique de l'heure, transformations log, standardisation), choix de k par silhouette, coude et stabilité des clusters. Un score d'anomalie normalisé par cluster et des règles d'alerte explicables, évaluées en précision et rappel. scikit-learn, K-means, Pandas, Seaborn"
+  },
+  {
+    "id": "project-ensam-market",
+    "kind": "project",
+    "index": 6,
+    "label": "ENSAM Market",
+    "domain": "Web · PHP",
+    "text": "ENSAM Market Marketplace d'achat et de vente entre étudiants de l'ENSAM Meknès. Les ventes entre étudiants se faisaient de groupe en groupe, sans historique ni recherche possible. Application PHP / MySQL complète : comptes, annonces, recherche, messagerie et back-office. Une place de marché interne à l'école, développée de la base de données à l'interface. PHP, MySQL, HTML/CSS, JavaScript"
+  },
+  {
+    "id": "skill-transformers",
+    "kind": "skill",
+    "label": "Transformers",
+    "domain": "NLP & LLM",
+    "level": 5,
+    "text": "Transformers. NLP & LLM."
+  },
+  {
+    "id": "skill-rag",
+    "kind": "skill",
+    "label": "RAG",
+    "domain": "NLP & LLM",
+    "level": 5,
+    "text": "RAG. NLP & LLM."
+  },
+  {
+    "id": "skill-langchain",
+    "kind": "skill",
+    "label": "LangChain",
+    "domain": "NLP & LLM",
+    "level": 4,
+    "text": "LangChain. NLP & LLM."
+  },
+  {
+    "id": "skill-chromadb-faiss",
+    "kind": "skill",
+    "label": "ChromaDB / FAISS",
+    "domain": "NLP & LLM",
+    "level": 4,
+    "text": "ChromaDB / FAISS. NLP & LLM."
+  },
+  {
+    "id": "skill-sentence-transformers",
+    "kind": "skill",
+    "label": "Sentence-Transformers",
+    "domain": "NLP & LLM",
+    "level": 4,
+    "text": "Sentence-Transformers. NLP & LLM."
+  },
+  {
+    "id": "skill-spacy-nltk",
+    "kind": "skill",
+    "label": "spaCy / NLTK",
+    "domain": "NLP & LLM",
+    "level": 3,
+    "text": "spaCy / NLTK. NLP & LLM."
+  },
+  {
+    "id": "skill-scikit-learn",
+    "kind": "skill",
+    "label": "scikit-learn",
+    "domain": "Machine Learning",
+    "level": 5,
+    "text": "scikit-learn. Machine Learning."
+  },
+  {
+    "id": "skill-tensorflow",
+    "kind": "skill",
+    "label": "TensorFlow",
+    "domain": "Machine Learning",
+    "level": 4,
+    "text": "TensorFlow. Machine Learning."
+  },
+  {
+    "id": "skill-huggingface",
+    "kind": "skill",
+    "label": "HuggingFace",
+    "domain": "Machine Learning",
+    "level": 4,
+    "text": "HuggingFace. Machine Learning."
+  },
+  {
+    "id": "skill-series-temporelles",
+    "kind": "skill",
+    "label": "Séries temporelles",
+    "domain": "Machine Learning",
+    "level": 4,
+    "text": "Séries temporelles. Machine Learning."
+  },
+  {
+    "id": "skill-optuna",
+    "kind": "skill",
+    "label": "Optuna",
+    "domain": "Machine Learning",
+    "level": 3,
+    "text": "Optuna. Machine Learning."
+  },
+  {
+    "id": "skill-opencv",
+    "kind": "skill",
+    "label": "OpenCV",
+    "domain": "Computer Vision",
+    "level": 4,
+    "text": "OpenCV. Computer Vision."
+  },
+  {
+    "id": "skill-yolo",
+    "kind": "skill",
+    "label": "YOLO",
+    "domain": "Computer Vision",
+    "level": 4,
+    "text": "YOLO. Computer Vision."
+  },
+  {
+    "id": "skill-cnn",
+    "kind": "skill",
+    "label": "CNN",
+    "domain": "Computer Vision",
+    "level": 4,
+    "text": "CNN. Computer Vision."
+  },
+  {
+    "id": "skill-mediapipe",
+    "kind": "skill",
+    "label": "MediaPipe",
+    "domain": "Computer Vision",
+    "level": 3,
+    "text": "MediaPipe. Computer Vision."
+  },
+  {
+    "id": "skill-clip",
+    "kind": "skill",
+    "label": "CLIP",
+    "domain": "Computer Vision",
+    "level": 3,
+    "text": "CLIP. Computer Vision."
+  },
+  {
+    "id": "skill-fastapi",
+    "kind": "skill",
+    "label": "FastAPI",
+    "domain": "Backend & MLOps",
+    "level": 5,
+    "text": "FastAPI. Backend & MLOps."
+  },
+  {
+    "id": "skill-celery-redis",
+    "kind": "skill",
+    "label": "Celery / Redis",
+    "domain": "Backend & MLOps",
+    "level": 4,
+    "text": "Celery / Redis. Backend & MLOps."
+  },
+  {
+    "id": "skill-postgresql",
+    "kind": "skill",
+    "label": "PostgreSQL",
+    "domain": "Backend & MLOps",
+    "level": 4,
+    "text": "PostgreSQL. Backend & MLOps."
+  },
+  {
+    "id": "skill-docker",
+    "kind": "skill",
+    "label": "Docker",
+    "domain": "Backend & MLOps",
+    "level": 4,
+    "text": "Docker. Backend & MLOps."
+  },
+  {
+    "id": "skill-sqlalchemy",
+    "kind": "skill",
+    "label": "SQLAlchemy",
+    "domain": "Backend & MLOps",
+    "level": 3,
+    "text": "SQLAlchemy. Backend & MLOps."
+  },
+  {
+    "id": "skill-git-github",
+    "kind": "skill",
+    "label": "Git / GitHub",
+    "domain": "Backend & MLOps",
+    "level": 4,
+    "text": "Git / GitHub. Backend & MLOps."
+  },
+  {
+    "id": "skill-python",
+    "kind": "skill",
+    "label": "Python",
+    "domain": "Data & Langages",
+    "level": 5,
+    "text": "Python. Data & Langages."
+  },
+  {
+    "id": "skill-pandas-numpy",
+    "kind": "skill",
+    "label": "Pandas / NumPy",
+    "domain": "Data & Langages",
+    "level": 5,
+    "text": "Pandas / NumPy. Data & Langages."
+  },
+  {
+    "id": "skill-sql",
+    "kind": "skill",
+    "label": "SQL",
+    "domain": "Data & Langages",
+    "level": 4,
+    "text": "SQL. Data & Langages."
+  },
+  {
+    "id": "skill-web-scraping",
+    "kind": "skill",
+    "label": "Web scraping",
+    "domain": "Data & Langages",
+    "level": 4,
+    "text": "Web scraping. Data & Langages."
+  },
+  {
+    "id": "skill-ocr-tesseract",
+    "kind": "skill",
+    "label": "OCR (Tesseract)",
+    "domain": "Data & Langages",
+    "level": 4,
+    "text": "OCR (Tesseract). Data & Langages."
+  },
+  {
+    "id": "skill-java-c-php",
+    "kind": "skill",
+    "label": "Java / C / PHP",
+    "domain": "Data & Langages",
+    "level": 3,
+    "text": "Java / C / PHP. Data & Langages."
+  }
+]
