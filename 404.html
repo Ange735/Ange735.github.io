@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 — Yipenè Ange Cenacle BADO</title>
+  <script>
+    try {
+      var forced = new URLSearchParams(location.search).get("theme");
+      document.documentElement.dataset.theme = forced || localStorage.getItem("theme") || "light";
+    } catch (e) { document.documentElement.dataset.theme = "light"; }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/weave.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <header class="site-head weave">
+    <a href="/" class="site-head__name">bado<span class="dim">.model</span></a>
+    <nav class="site-head__nav" aria-label="Sections">
+      <a href="/#projets">Projets</a>
+      <a href="/#parcours">Parcours</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="lost weave">
+    <div class="hero__warp warp" aria-hidden="true"></div>
+    <div class="lost__main">
+      <p class="lost__code display">404</p>
+      <p class="meta">token hors vocabulaire · aucune page à cette adresse</p>
+      <p class="lede" style="margin-top: 1.4em; max-width: 34ch;">
+        Cette adresse ne mène nulle part. Ce n'est pas vous, c'est le lien.
+      </p>
+      <p style="margin-top: 1.6em;">
+        <a class="btn btn--solid" href="/">Retour à l'accueil</a>
+      </p>
+    </div>
+  </main>
+
+  <div class="band band--dents" role="presentation"></div>
+
+  <footer class="site-foot weave">
+    <p class="site-foot__left meta">conçu à la main · aucun modèle n'a été maltraité</p>
+    <p class="site-foot__right meta">404</p>
+  </footer>
+</body>
+</html>

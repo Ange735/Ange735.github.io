@@ -23,11 +23,11 @@
   <header class="site-head weave">
     <a href="#" class="site-head__name">bado<span class="dim">.model</span></a>
     <nav class="site-head__nav" aria-label="Sections">
-      <a href="#carte" aria-current="true">Carte</a>
       <a href="#projets">Projets</a>
+      <a href="#carte">Carte</a>
       <a href="#parcours">Parcours</a>
       <a href="#hors-entrainement">Hors entraînement</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Écrire</a>
     </nav>
     <button class="site-head__theme" id="themeToggle" type="button">
       thème : <b data-theme-label>écru</b>
@@ -35,68 +35,67 @@
   </header>
 
   <main id="contenu">
+    <!-- ============ ACCUEIL ============ -->
     <section class="hero weave">
       <div class="hero__warp warp" aria-hidden="true"></div>
 
       <div class="hero__main">
         <p class="hero__prompt mono">model.generate(<span class="str">"qui es-tu ?"</span>, temperature=<span class="num">0.7</span>)</p>
-        <h1 class="hero__name display">
-          <span>Yipenè Ange Cenacle</span>
-          <span class="surname">BADO</span>
-        </h1>
+        <h1 class="hero__name display" id="heroName"></h1>
         <p class="hero__eos meta">&lt;eos&gt; · 4 tokens · 3884 ms · top_p=0.95</p>
-
-        <p class="hero__lede lede todo">
-          [ta phrase d'accroche — tes mots, pas les miens]
-        </p>
-
+        <div id="heroAccroche"></div>
         <div class="hero__cta">
           <a class="btn btn--solid" href="#projets">Lire trois projets</a>
           <a class="btn" href="assets/CV.pdf" download>CV (PDF)</a>
         </div>
       </div>
 
-      <aside class="hero__side">
-        <dl>
-          <div>
-            <dt>poste</dt>
-            <dd>AI/ML Engineer, GO AI CORP<br /><span class="dim">depuis juillet 2026</span></dd>
-          </div>
-          <div>
-            <dt>école</dt>
-            <dd>ENSAM Meknès<br /><span class="dim">cycle ingénieur Data Science &amp; IA, 2<sup>e</sup> année</span></dd>
-          </div>
-          <div>
-            <dt>lieu</dt>
-            <dd>Meknès, Maroc<br /><span class="dim">né au Burkina Faso</span></dd>
-          </div>
-          <div>
-            <dt>le soir</dt>
-            <dd class="todo">[cyber : ce que tu as vraiment monté]</dd>
-          </div>
-        </dl>
-      </aside>
+      <aside class="hero__side" id="heroSide"></aside>
+    </section>
+
+    <!-- ============ QUESTIONS / RÉPONSES ============ -->
+    <section class="section section--tight weave" id="questions">
+      <div class="section__head">
+        <h2 class="section__title title">Quatre questions</h2>
+      </div>
+      <div class="qa" id="assistant"></div>
     </section>
 
     <div class="band band--chevron" role="presentation"></div>
 
+    <!-- ============ PROJETS ============ -->
+    <section class="section weave" id="projets">
+      <div class="section__head">
+        <h2 class="section__title title">Projets</h2>
+        <p>Trois en entier, avec ce qui a raté. Le reste en liste.</p>
+      </div>
+      <div class="section__note">
+        <p>Chaque projet est raconté comme un run : le contexte, ce qui a planté, ce qui a marché, le résultat, ce que j'en retiens.</p>
+      </div>
+      <div class="projets" id="projets-liste"></div>
+      <div class="autres-bloc">
+        <h3 class="autres__titre meta">autres projets</h3>
+        <ul class="autres" id="autres"></ul>
+      </div>
+    </section>
+
+    <div class="band band--losange" role="presentation"></div>
+
+    <!-- ============ CARTE ============ -->
     <section class="section weave" id="carte">
       <div class="section__head">
         <h2 class="section__title title">Carte des compétences</h2>
         <p>Chaque point est un projet ou une technologie, encodé puis projeté en deux dimensions. La position et les liens viennent du calcul, pas de mon avis.</p>
       </div>
-
       <div class="section__note">
         <p>Cliquez un losange pour ouvrir le projet correspondant. Survolez un point pour voir ses plus proches voisins et leur similarité réelle.</p>
       </div>
-
       <div class="map">
         <div class="map__frame" id="mapFrame">
           <svg class="map__svg" id="mapSvg" role="img" aria-label="Projection en deux dimensions des projets et des compétences"></svg>
           <div class="map__tip" id="mapTip" hidden></div>
         </div>
       </div>
-
       <div class="map__caption">
         <div class="map__legend">
           <span><i class="is-project"></i>projet</span>
@@ -111,21 +110,61 @@
       </div>
     </section>
 
-    <div class="band band--losange" role="presentation"></div>
+    <div class="band band--rails" role="presentation"></div>
 
-    <section class="section weave" id="projets">
+    <!-- ============ PARCOURS ============ -->
+    <section class="section weave" id="parcours">
       <div class="section__head">
-        <h2 class="section__title title">Projets</h2>
-        <p class="todo">[trois projets racontés en entier : contexte → ce qui a planté → ce qui a marché → résultat mesuré → ce que j'en retiens. J'attends tes histoires.]</p>
+        <h2 class="section__title title">Parcours</h2>
+      </div>
+      <ol class="etapes" id="parcours-liste"></ol>
+      <div class="certifs" id="certifs"></div>
+    </section>
+
+    <div class="band band--dents" role="presentation"></div>
+
+    <!-- ============ HORS ENTRAÎNEMENT ============ -->
+    <section class="section weave" id="hors-entrainement">
+      <div class="section__head">
+        <h2 class="section__title title">Hors entraînement</h2>
+      </div>
+      <div class="hors" id="hors"></div>
+    </section>
+
+    <div class="band band--pointille" role="presentation"></div>
+
+    <!-- ============ ÉCRIRE ============ -->
+    <section class="section weave" id="contact">
+      <div class="section__head">
+        <h2 class="section__title title">Écrire</h2>
+        <p>Un projet, une question, une offre de stage ou d'emploi : écrivez, je réponds.</p>
+      </div>
+      <div class="section__note">
+        <ul class="contact-list" id="contactList"></ul>
+      </div>
+
+      <div class="shell" id="shell">
+        <div class="shell__bar meta">
+          <span>bado@model — session locale</span>
+          <span class="dim">tapez <b>help</b> si vous êtes curieux</span>
+        </div>
+        <div class="shell__out mono" id="shellOut" role="log" aria-live="polite" aria-label="Sortie du terminal"></div>
+        <form class="shell__line" id="shellForm">
+          <label class="shell__ps mono" for="shellInput">bado@model:~$</label>
+          <input class="mono" id="shellInput" name="cmd" autocomplete="off" spellcheck="false" />
+          <button class="visually-hidden" type="submit">Exécuter</button>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-foot weave">
     <p class="site-foot__left meta">conçu à la main · aucun modèle n'a été maltraité</p>
-    <p class="site-foot__right meta">aperçu de refonte · direction « tissé »</p>
+    <p class="site-foot__right meta" id="todoCount"></p>
   </footer>
 
+  <script src="js/content.js"></script>
+  <script src="js/render.js"></script>
   <script src="js/site.js"></script>
 </body>
 </html>

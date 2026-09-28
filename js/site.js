@@ -32,6 +32,94 @@ const svgEl = (tag, attrs = {}) => {
   sync();
 })();
 
+/* ---------- terminal de contact ----------
+   Un vrai petit shell : quelques commandes utiles, quelques-unes pour ceux
+   qui tapent `sudo` par réflexe.                                          */
+(() => {
+  const shell = $("#shell");
+  if (!shell) return;
+  const out = $("#shellOut"), form = $("#shellForm"), input = $("#shellInput");
+  const EMAIL = "baocenacle80@gmail.com";
+
+  const print = (text = "", cls) => {
+    const line = document.createElement("div");
+    if (cls) line.className = cls;
+    line.textContent = text;
+    out.appendChild(line);
+    out.scrollTop = out.scrollHeight;
+  };
+  const printAll = (lines, cls) => lines.forEach((l) => print(l, cls));
+
+  const COMMANDS = {
+    help: () => [
+      "commandes   : whoami · ls · cat <fichier> · mail · theme · clear",
+      "raccourcis  : ↑ ↓ pour retrouver une commande",
+      "le reste    : essayez, on ne sait jamais.",
+    ],
+    whoami: () => [
+      "vous : un visiteur, probablement curieux.",
+      "moi  : Yipenè Ange Cenacle BADO — AI/ML Engineer chez GO AI CORP,",
+      "       étudiant ingénieur à l'ENSAM Meknès, né au Burkina Faso.",
+    ],
+    ls: () => ["cv.pdf   contact.txt   projets/   .ssh/"],
+    cat: (arg) => {
+      if (!arg) return ["cat : il manque un nom de fichier."];
+      if (arg.startsWith(".ssh")) return ["non."];
+      if (arg === "cv.pdf") { open("assets/CV.pdf", "_blank", "noopener"); return ["ouverture de cv.pdf…"]; }
+      if (arg === "contact.txt") return [`email    ${EMAIL}`, "github   github.com/Ange735", "linkedin in/ange-bado"];
+      if (arg === "projets/" || arg === "projets") return ["projets/ est un dossier. la version lisible est plus haut dans la page."];
+      return [`cat : ${arg} : fichier introuvable`];
+    },
+    mail: () => { location.href = `mailto:${EMAIL}`; return ["ouverture du client mail…"]; },
+    sudo: () => ["Yipenè n'est pas dans le fichier sudoers. Cet incident sera signalé."],
+    nmap: (arg) => [
+      `Nmap — cible : ${arg || "bado.model"}`,
+      "PORT     ÉTAT      SERVICE",
+      "22/tcp   filtered  ssh      clé publique uniquement",
+      "80/tcp   open      http     ce portfolio",
+      "443/tcp  open      https",
+      "1 hôte scanné. Les autres ports, c'est mon home lab, pas le vôtre.",
+    ],
+    theme: () => {
+      const btn = $("#themeToggle");
+      if (btn) btn.click();
+      return [`thème : ${document.documentElement.dataset.theme === "dark" ? "nuit" : "écru"}`];
+    },
+    clear: () => { out.replaceChildren(); return []; },
+  };
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const raw = input.value.trim();
+    input.value = "";
+    if (!raw) return;
+    history.unshift(raw);
+    cursor = -1;
+    print(`bado@model:~$ ${raw}`, "echo");
+    const [name, ...rest] = raw.split(/\s+/);
+    const run = COMMANDS[name.toLowerCase()];
+    if (run) printAll(run(rest.join(" ").toLowerCase()) || []);
+    else print(`${name} : commande inconnue. tapez help.`, "err");
+  });
+
+  const history = [];
+  let cursor = -1;
+  input.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowUp" && event.key !== "ArrowDown") return;
+    event.preventDefault();
+    cursor = Math.min(Math.max(cursor + (event.key === "ArrowUp" ? 1 : -1), -1), history.length - 1);
+    input.value = cursor === -1 ? "" : history[cursor];
+  });
+
+  // cliquer dans le terminal met le curseur dans la ligne de saisie
+  shell.addEventListener("click", (event) => {
+    if (!event.target.closest("a, button")) input.focus({ preventScroll: true });
+  });
+
+  print("session ouverte · shell local, rien n'est envoyé nulle part");
+  print("tapez help pour la liste des commandes");
+})();
+
 /* ---------- carte : projection calculée hors ligne ---------- */
 (async () => {
   const frame = $("#mapFrame"), svg = $("#mapSvg"), tip = $("#mapTip"), meta = $("#mapMeta");

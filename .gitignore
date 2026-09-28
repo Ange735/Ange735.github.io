@@ -1,3 +1,6 @@
 # originaux haute résolution de la photo : seule assets/photo.jpg est publiée
 assets/me.png
 assets/generated-image.png
+
+# copies temporaires pour les captures
+_tmp-*.html
